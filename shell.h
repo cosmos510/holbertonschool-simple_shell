@@ -1,0 +1,23 @@
+#ifndef S_SIMPLE_H
+#define S_SIMPLE_H
+
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <errno.h>
+
+extern char **environ;
+
+int run_prompt(void);
+int read_line(char *command);
+void new_env(char *executable_path, char *args[]);
+void _printev(void);
+int *tokenize_path(char **args_command);
+char *_getenv(char *var);
+void execute_command(char **args, char **args_command);
+void new_env(char *executable_path, char *args[]);
+
+#endif
