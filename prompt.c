@@ -3,8 +3,9 @@
  * run_prompt - function that run the main prompt of our shell
  * Return: 0 if function succeed
  */
+char *test;
 
-char *test = NULL;
+
 
 int run_prompt(void)
 {
@@ -34,8 +35,7 @@ int run_prompt(void)
 
 		if (strcmp(test, "exit") == 0)
 		{
-			free(test);
-			exit(0);
+			our_exit(test);
 		}
 
 		if (strcmp(test, "env") == 0)
@@ -53,7 +53,13 @@ int run_prompt(void)
 
 void signal_callback_handler(int x)
 {
+
 	signal(x, SIG_IGN);
-	free(test);
-	exit(0);
+	our_exit(test);
 }
+ void our_exit(char *command)
+ {
+	free(command);
+	exit(0);
+
+ }

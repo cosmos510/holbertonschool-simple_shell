@@ -10,7 +10,10 @@
 #include <errno.h>
 #include <signal.h>
 
+extern char *test;
+
 extern char **environ;
+
 
 int run_prompt(void);
 int read_line(char *command);
@@ -21,4 +24,5 @@ char *_getenv(char *var);
 void execute_command(char **args, char **args_command);
 void new_env(char *executable_path, char *args[]);
 void signal_callback_handler(__attribute_maybe_unused__ int x);
+void our_exit(char *command);
 #endif
