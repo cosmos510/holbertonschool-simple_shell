@@ -4,7 +4,7 @@
  * Return: 0 if function succeed
  */
 
-char *command = NULL;
+char *test = NULL;
 
 int run_prompt(void)
 {
@@ -16,44 +16,44 @@ int run_prompt(void)
 	while (1)
 	{
 		printf(":) ");
-		bytes_read = getline(&command, &bufsize, stdin);
+		bytes_read = getline(&test, &bufsize, stdin);
 
 		if (bytes_read == -1)
 		{
-			free(command);
+			free(test);
 			exit(1);
 		}
-		if (command[bytes_read - 1] == '\n')
-			command[bytes_read - 1] = '\0';
+		if (test[bytes_read - 1] == '\n')
+			test[bytes_read - 1] = '\0';
 
 		if (bytes_read == EOF)
 		{
-			free(command);
+			free(test);
 			exit(0);
 		}
 
-		if (strcmp(command, "exit") == 0)
+		if (strcmp(test, "exit") == 0)
 		{
-			free(command);
+			free(test);
 			exit(0);
 		}
 
-		if (strcmp(command, "env") == 0)
+		if (strcmp(test, "env") == 0)
 		{
 
 			_printev();
 		}
 		else
-			read_line(command);
+			read_line(test);
 
 	}
-	free(command);
+	free(test);
 	return (0);
 }
 
-void signal_callback_handler(__attribute_maybe_unused__ int x)
+void signal_callback_handler(int x)
 {
 	signal(x, SIG_IGN);
-	free(command);
+	free(test);
 	exit(0);
 }
