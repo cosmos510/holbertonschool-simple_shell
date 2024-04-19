@@ -3,7 +3,7 @@
  * run_prompt - function that run the main prompt of our shell
  * Return: 0 if function succeed
  */
-char *test;
+char *test = NULL;
 
 
 
@@ -13,6 +13,7 @@ int run_prompt(void)
 	size_t bufsize = 1024;
 	ssize_t bytes_read;
 	signal(SIGINT, signal_callback_handler);
+
 
 	while (1)
 	{
@@ -35,7 +36,8 @@ int run_prompt(void)
 
 		if (strcmp(test, "exit") == 0)
 		{
-			our_exit(test);
+			free(test);
+			our_exit(0);
 		}
 
 		if (strcmp(test, "env") == 0)
@@ -55,11 +57,12 @@ void signal_callback_handler(int x)
 {
 
 	signal(x, SIG_IGN);
-	our_exit(test);
+	free(test);
+	our_exit(0);
 }
- void our_exit(char *command)
+ void our_exit(int status)
  {
-	free(command);
-	exit(0);
+
+	exit(status);
 
  }
