@@ -31,7 +31,7 @@ int run_prompt(void)
 		if (strcmp(command, "exit") == 0)
 		{
 			free(command);
-			exit(0);
+			return(0);
 		}
 
 		if (strcmp(command, "env") == 0)
