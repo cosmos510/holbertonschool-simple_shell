@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <errno.h>
+#include <signal.h>
 
 extern char **environ;
 
@@ -19,5 +20,5 @@ int *tokenize_path(char **args_command);
 char *_getenv(char *var);
 void execute_command(char **args, char **args_command);
 void new_env(char *executable_path, char *args[]);
-
+void signal_callback_handler(__attribute_maybe_unused__ int x);
 #endif
