@@ -26,13 +26,16 @@ int main(int ac, __attribute__((unused)) char **av)
 			if (test[bytes_read - 1] == '\n')
 				test[bytes_read - 1] = '\0';
 
-			read_line(test);
+			if (bytes_read == EOF)
+			{
+				free(test);
+				exit(0);
+			}
+			else
+				read_line(test);
 		}
 
 	}
-	else
-	{
-		perror("hsh:");
-	}
+	free(test);
 	return (0);
 }
