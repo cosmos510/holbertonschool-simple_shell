@@ -1,17 +1,7 @@
-<<<<<<< HEAD
-#include "s_shell.h"
-
-/**
- *
- *
- *
- *
-=======
 #include "shell.h"
 /**
  * run_prompt - function that run the main prompt of our shell
  * Return: 0 if function succeed
->>>>>>> main
  */
 int run_prompt(void)
 {
@@ -25,17 +15,6 @@ int run_prompt(void)
 		bytes_read = getline(&command, &bufsize, stdin);
 
 		if (bytes_read == -1)
-<<<<<<< HEAD
-			break;
-
-		if (command[bytes_read - 1] == '\n')
-			command[bytes_read - 1] = '\0';
-
-		if (strcmp(command, "exit") == 0)
-			exit(0);
-
-		read_line(command);
-=======
 		{
 			free(command);
 			exit(1);
@@ -62,7 +41,6 @@ int run_prompt(void)
 		}
 		else
 			read_line(command);
->>>>>>> main
 	}
 	free(command);
 	return (0);
