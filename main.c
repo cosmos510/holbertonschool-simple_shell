@@ -5,18 +5,16 @@
  * @av: list of arguments
  * Return: 0 if program run with success
  */
-int main(int ac, __attribute__((unused)) char **av)
+
+int main(int ac, char **av)
 {
-	if (ac == 1)
-	{
-		if (isatty(STDIN_FILENO))
-		{
-			run_prompt();
-		}
-	}
-	else
-	{
-		perror("hsh:");
-	}
-	return (0);
+    if (ac == 1 && strcmp(av[0], "./hsh") == 0)
+    {
+        run_prompt();
+    }
+    else if (ac > 1)
+    {
+        perror("hsh ");
+    }
+    return (0);
 }
