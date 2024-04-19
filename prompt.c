@@ -36,7 +36,7 @@ int run_prompt(void)
 
 		if (strcmp(command, "env") == 0)
 		{
-			free(command);
+
 			_printev();
 		}
 		else
