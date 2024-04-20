@@ -35,7 +35,7 @@ int run_prompt(void)
 		}
 
 		if (strcmp(test, "exit") == 0)
-			our_exit(test);
+			our_exit(0);
 
 		if (strcmp(test, "env") == 0)
 			_printev();
@@ -65,8 +65,8 @@ void signal_callback_handler(int x)
  * then exit the program.
  * @command: The command string whose memory needs to be released
  */
-void our_exit(char *command)
+void our_exit(int status)
 {
-	free(command);
-	exit(0);
+
+	exit(status);
 }
