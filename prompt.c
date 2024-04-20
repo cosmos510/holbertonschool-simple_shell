@@ -67,7 +67,7 @@ void signal_callback_handler(int x)
 /**
  * our_exit - Function to release memory allocated for a command string and
  * then exit the program.
- * @command: The command string whose memory needs to be released
+ * @status: The command string whose memory needs to be released
  */
 void our_exit(int status)
 {
