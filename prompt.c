@@ -35,7 +35,11 @@ int run_prompt(void)
 		}
 
 		if (strcmp(test, "exit") == 0)
+		{
+			free(test);
 			our_exit(0);
+		}
+
 
 		if (strcmp(test, "env") == 0)
 			_printev();
