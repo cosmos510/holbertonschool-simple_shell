@@ -23,7 +23,7 @@ char *_getenv(char *var);
 void execute_command(char **args, char **args_command);
 void new_env(char *executable_path, char *args[]);
 void signal_callback_handler(int x);
-void our_exit(char *command);
+void our_exit(int status);
 #endif
 
 

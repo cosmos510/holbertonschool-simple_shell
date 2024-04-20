@@ -5,12 +5,15 @@ char *test;
  * Return: 0 if function succeed
  */
 
+
+
 int run_prompt(void)
 {
 	size_t bufsize = 1024;
 	ssize_t bytes_read;
 
 	signal(SIGINT, signal_callback_handler);
+
 
 	while (1)
 	{
@@ -53,7 +56,8 @@ void signal_callback_handler(int x)
 {
 
 	signal(x, SIG_IGN);
-	our_exit(test);
+	free(test);
+	our_exit(0);
 }
 
 /**
