@@ -16,7 +16,7 @@ void execute_command(char **args, char **args_command)
 
 	for (j = 0; args[j] != NULL; j++)
 	{
-		found = 1;
+		found =1;
 		sprintf(executable_path, "%s/%s", args[j], args_command[0]);
 		if (access(executable_path, F_OK) == 0)
 		{
@@ -26,7 +26,7 @@ void execute_command(char **args, char **args_command)
 			break;
 		}
 	}
-	if (access(args_command[0], F_OK) == 0)
+	if (!found && access(args_command[0], F_OK) == 0)
 	{
         new_env(args_command[0], args_command);
         found = 1;
