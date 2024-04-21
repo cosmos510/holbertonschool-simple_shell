@@ -9,6 +9,7 @@ int main(int ac, __attribute__((unused)) char **av)
 {
 	ssize_t bytes_read;
 	size_t bufsize = 1024;
+	
 	if (ac == 1)
 	{
 		if (isatty(STDIN_FILENO))
@@ -28,7 +29,7 @@ int main(int ac, __attribute__((unused)) char **av)
 
 			if (bytes_read == EOF)
 			{
-				
+
 				exit(0);
 			}
 			else

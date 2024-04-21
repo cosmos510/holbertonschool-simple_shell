@@ -24,14 +24,14 @@ int *tokenize_path(char **args_command)
 	}
 	if (path)
 	{
-	tok = strtok(path, ":");
+		tok = strtok(path, ":");
 
-	while (tok != NULL)
-	{
-		tokens[i++] = tok;
-		tok = strtok(NULL, ":");
-	}
-	tokens[i] = NULL;
+		while (tok != NULL)
+		{
+			tokens[i++] = tok;
+			tok = strtok(NULL, ":");
+		}
+		tokens[i] = NULL;
 	}
 
 	execute_command(tokens, args_command);
