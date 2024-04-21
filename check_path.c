@@ -22,8 +22,7 @@ void execute_command(char **args, char **args_command)
 		}
 		else
 		{
-			perror(args[j]);
-			our_exit(2);
+			our_exit(0);
 		}
 
 	}
