@@ -42,7 +42,7 @@ int run_prompt(void)
 
 
 		if (strcmp(test, "env") == 0)
-			_printev();
+			_printev(environ);
 		else
 			read_line(test);
 	}

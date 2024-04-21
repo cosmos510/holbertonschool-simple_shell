@@ -17,7 +17,7 @@ extern char *test;
 int run_prompt(void);
 int read_line(char *command);
 void new_env(char *executable_path, char *args[]);
-void _printev(void);
+void _printev(char **environ);
 int *tokenize_path(char **args_command);
 char *_getenv(const char *var);
 void execute_command(char **args, char **args_command);

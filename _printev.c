@@ -7,9 +7,12 @@
  * followed by a newline character using printf.
  */
 
-void _printev(void)
+void _printev(char **environ)
 {
 	int i = 0;
+
+	if(!environ)
+		exit(-1);
 
 	for (i = 0; environ[i]; i++)
 		printf("%s\n", environ[i]);
