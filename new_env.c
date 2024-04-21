@@ -20,12 +20,14 @@ void new_env(char *executable_path, char *args[])
 	{
 		execve(executable_path, args, environ);
 		free(args);
-		perror("Error");
+
 	}
 	else
 	{
 		int status;
 
 		wait(&status);
+		if (status == 512)
+			exit(2);
 	}
 }
