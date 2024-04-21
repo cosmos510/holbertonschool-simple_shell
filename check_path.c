@@ -21,8 +21,6 @@ void execute_command(char **args, char **args_command)
 			new_env(executable_path, args_command);
 			break;
 		}
-		if (access(executable_path, F_OK) == -1)
-			exit(0);
 
 	}
 	if (access(args_command[0], F_OK) == 0)
