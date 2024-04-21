@@ -37,7 +37,7 @@ int run_prompt(void)
 		if (strcmp(test, "exit") == 0)
 		{
 			free(test);
-			our_exit(2);
+			exit(2);
 		}
 
 
