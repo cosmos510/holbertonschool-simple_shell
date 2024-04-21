@@ -19,9 +19,8 @@ int read_line(char *command);
 void new_env(char *executable_path, char *args[]);
 void _printev(void);
 int *tokenize_path(char **args_command);
-char *_getenv(char *var);
+char *_getenv(const char *var);
 void execute_command(char **args, char **args_command);
-void new_env(char *executable_path, char *args[]);
 void signal_callback_handler(int x);
 void our_exit(int status);
 #endif
