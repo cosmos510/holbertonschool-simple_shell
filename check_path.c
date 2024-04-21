@@ -16,6 +16,7 @@ void execute_command(char **args, char **args_command)
 
 	for (j = 0; args[j] != NULL; j++)
 	{
+		found =1;
 		sprintf(executable_path, "%s/%s", args[j], args_command[0]);
 		if (access(executable_path, F_OK) == 0)
 		{
@@ -33,6 +34,6 @@ void execute_command(char **args, char **args_command)
 	if (!found) {
         printf("%s: Command not found\n", args_command[0]);
     }
-	
+
 	}
 
