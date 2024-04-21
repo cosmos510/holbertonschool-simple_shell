@@ -27,6 +27,7 @@ int run_prompt(void)
 			free(test);
 			exit(1);
 		}
+		is_whitespace = 1;
 		for (i = 0; i < bytes_read; i++)
 		{
             if (test[i] != ' ' && test[i] != '\n' && test[i] != '\t')
