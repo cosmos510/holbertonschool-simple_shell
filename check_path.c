@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * execute_command - execute a command from the given arguments.
  * @args: an array of strings representing possible paths.
@@ -8,9 +9,10 @@
 
 void execute_command(char **args, char **args_command)
 {
+	int j = 0;
 	char executable_path[256];
-	int found = 0, j = 0;
-
+	int found = 0;
+	
 	if (args_command[0][0] == '/')
 	{
 		if (access(args_command[0], F_OK) == 0)
@@ -19,19 +21,33 @@ void execute_command(char **args, char **args_command)
 			new_env(args_command[0], args_command);
 		}
 	}
-	if (!found)
+	else
 	{
 		for (j = 0; args[j] != NULL; j++)
+	{
+
+		sprintf(executable_path, "%s/%s", args[j], args_command[0]);
+		if (access(executable_path, F_OK) == 0)
 		{
-			sprintf(executable_path, "%s/%s", args[j], args_command[0]);
-			if (access(executable_path, F_OK) == 0)
-			{
-				found = 1;
-				new_env(executable_path, args_command);
-				break;
-			}
+
+			new_env(executable_path, args_command);
+			found = 1;
+			break;
 		}
 	}
-	if (!found)
-		fprintf(stderr, "%s: Command not found\n", args_command[0]);
-}
+	if (!found && access(args_command[0], F_OK) == 0)
+	{
+        new_env(args_command[0], args_command);
+        found = 1;
+	}
+	if (!found && args_command[0] != NULL)
+	{
+        printf("./hsh: %s: Command not found\n", args_command[0]);
+
+    }
+
+	}
+	}
+
+
+
