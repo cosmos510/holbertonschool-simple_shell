@@ -14,7 +14,7 @@ char *_getenv(const char *var)
 
 	for (i = 0; environ[i]; i++)
 	{
-		if (strncmp(environ[i], var, strlen(var)) == 0)
+		if (strncmp(environ[i], var, var_len) == 0)
 		{
 			value_start = &environ[i][var_len + 1];
 			return (value_start);
