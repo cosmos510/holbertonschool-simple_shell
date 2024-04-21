@@ -11,19 +11,12 @@ char *_getenv(const char *var)
 	int i = 0;
 	int var_len = strlen(var);
 	char *value_start = NULL;
-	char **new_environ = NULL;
 
 	for (i = 0; environ[i]; i++)
 	{
-		strcpy(new_environ[i], environ[i]);
-	}
-
-
-	for (i = 0; new_environ[i]; i++)
-	{
-		if (strncmp(new_environ[i], var, strlen(var)) == 0)
+		if (strncmp(environ[i], var, strlen(var)) == 0)
 		{
-			value_start = &new_environ[i][var_len + 1];
+			value_start = &environ[i][var_len + 1];
 			return (value_start);
 		}
 	}
