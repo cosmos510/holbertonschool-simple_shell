@@ -12,18 +12,9 @@ void execute_command(char **args, char **args_command)
 	int j = 0;
 	char executable_path[256];
 	int found = 0;
-	
-	if (args_command[0][0] == '/')
-	{
-		if (access(args_command[0], F_OK) == 0)
-		{
-			found = 1;
-			new_env(args_command[0], args_command);
-		}
-	}
-	else
-	{
-		for (j = 0; args[j] != NULL; j++)
+
+
+	for (j = 0; args[j] != NULL; j++)
 	{
 
 		sprintf(executable_path, "%s/%s", args[j], args_command[0]);
@@ -41,13 +32,6 @@ void execute_command(char **args, char **args_command)
         found = 1;
 	}
 	if (!found && args_command[0] != NULL)
-	{
         printf("./hsh: %s: Command not found\n", args_command[0]);
-
-    }
-
-	}
-	}
-
-
+}
 
