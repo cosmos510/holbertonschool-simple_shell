@@ -22,7 +22,7 @@ void execute_command(char **args, char **args_command)
 		}
 		else
 		{
-			our_exit(0);
+			exit(0);
 		}
 
 	}
