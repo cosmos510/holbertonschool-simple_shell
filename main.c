@@ -20,7 +20,7 @@ int main(int ac, __attribute__((unused)) char **av)
 			bytes_read = getline(&test, &bufsize, stdin);
 			if (bytes_read == -1)
 			{
-				free(test);
+
 				exit(1);
 			}
 			if (test[bytes_read - 1] == '\n')
@@ -28,7 +28,7 @@ int main(int ac, __attribute__((unused)) char **av)
 
 			if (bytes_read == EOF)
 			{
-				free(test);
+				
 				exit(0);
 			}
 			else
