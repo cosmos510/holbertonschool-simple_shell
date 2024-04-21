@@ -28,10 +28,8 @@ void execute_command(char **args, char **args_command)
 	}
 	if (!found && access(args_command[0], F_OK) == 0)
 	{
-        new_env(args_command[0], args_command);
-        found = 1;
+		new_env(args_command[0], args_command);
+		found = 1;
 	}
-	if (!found && args_command[0] != NULL)
-        printf("./hsh: %s: Command not found\n", args_command[0]);
 }
 
