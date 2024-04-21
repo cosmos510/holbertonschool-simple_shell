@@ -13,7 +13,7 @@ int *tokenize_path(char **args_command)
 	char *tok = 0;
 	int i = 0;
 	char *path = strdup(_getenv("PATH"));
-	
+
 	if (!path || !(*path))
 		return (NULL);
 
@@ -22,7 +22,8 @@ int *tokenize_path(char **args_command)
 	{
 		exit(0);
 	}
-
+	if (path)
+	{
 	tok = strtok(path, ":");
 
 	while (tok != NULL)
@@ -31,6 +32,7 @@ int *tokenize_path(char **args_command)
 		tok = strtok(NULL, ":");
 	}
 	tokens[i] = NULL;
+	}
 
 	execute_command(tokens, args_command);
 

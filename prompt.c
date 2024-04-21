@@ -11,6 +11,8 @@ int run_prompt(void)
 {
 	size_t bufsize = 1024;
 	ssize_t bytes_read;
+	int is_whitespace = 1;
+	int i= 0;
 
 	signal(SIGINT, signal_callback_handler);
 
@@ -25,6 +27,17 @@ int run_prompt(void)
 			free(test);
 			exit(1);
 		}
+		for (i = 0; i < bytes_read; i++)
+		{
+            if (test[i] != ' ' && test[i] != '\n' && test[i] != '\t')
+			{
+                is_whitespace = 0;
+                break;
+			}
+		}
+
+		if (is_whitespace)
+            continue;
 		if (test[bytes_read - 1] == '\n')
 			test[bytes_read - 1] = '\0';
 

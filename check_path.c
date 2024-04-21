@@ -11,6 +11,7 @@ void execute_command(char **args, char **args_command)
 {
 	int j = 0;
 	char executable_path[256];
+	int found = 0;
 
 
 	for (j = 0; args[j] != NULL; j++)
@@ -18,11 +19,20 @@ void execute_command(char **args, char **args_command)
 		sprintf(executable_path, "%s/%s", args[j], args_command[0]);
 		if (access(executable_path, F_OK) == 0)
 		{
+
 			new_env(executable_path, args_command);
+			found = 1;
 			break;
 		}
-
 	}
-	if (access(args_command[0], F_OK) == 0)
-		new_env(args_command[0], args_command);
-}
+	if (!found && access(args_command[0], F_OK) == 0)
+	{
+        new_env(args_command[0], args_command);
+        found = 1;
+	}
+	if (!found) {
+        printf("%s: Command not found\n", args_command[0]);
+    }
+	
+	}
+

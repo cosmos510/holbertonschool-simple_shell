@@ -21,6 +21,7 @@ void new_env(char *executable_path, char *args[])
 	{
 		execve(executable_path, args, environ);
 		free(args);
+		exit(3);
 
 	}
 	else
