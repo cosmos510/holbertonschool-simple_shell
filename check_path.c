@@ -12,6 +12,7 @@ void execute_command(char **args, char **args_command)
 	int j = 0;
 	char executable_path[256];
 
+
 	for (j = 0; args[j] != NULL; j++)
 	{
 		sprintf(executable_path, "%s/%s", args[j], args_command[0]);
@@ -21,7 +22,7 @@ void execute_command(char **args, char **args_command)
 			break;
 		}
 		if (access(executable_path, F_OK) == -1)
-			exit(2);
+			exit(0);
 
 	}
 	if (access(args_command[0], F_OK) == 0)
