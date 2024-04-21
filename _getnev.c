@@ -6,10 +6,10 @@
  * or NULL if not found.
  */
 
-char *_getenv(char *var)
+char *_getenv(const char *var)
 {
 	int i = 0;
-	size_t var_len = strlen(var);
+	int var_len = strlen(var);
 	char *value_start = NULL;
 
 	for (i = 0; environ[i]; i++)
