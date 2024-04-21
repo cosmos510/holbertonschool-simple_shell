@@ -14,7 +14,7 @@ void new_env(char *executable_path, char *args[])
 	{
 		perror("Error");
 		free(args);
-		exit(EXIT_FAILURE);
+		exit(2);
 	}
 	else if (child == 0)
 	{
