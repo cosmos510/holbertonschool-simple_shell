@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * new_env - function to create a new child process and execute a program
  * with specified arguments
@@ -28,6 +29,10 @@ void new_env(char *executable_path, char *args[])
 
 		wait(&status);
 		if (status == 512)
+		{
+			free(test);
 			exit(2);
+		}
+
 	}
 }
