@@ -31,6 +31,7 @@ void new_env(char *executable_path, char *args[])
 		if (status == 512)
 		{
 			free(test);
+			free(args);
 			exit(2);
 		}
 
