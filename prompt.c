@@ -12,16 +12,13 @@ int run_prompt(void)
 	size_t bufsize = 1024;
 	ssize_t bytes_read;
 	int is_whitespace = 1;
-	int i= 0;
+	int i = 0;
 
 	signal(SIGINT, signal_callback_handler);
-
-
 	while (1)
 	{
 		printf(":) ");
 		bytes_read = getline(&test, &bufsize, stdin);
-
 		if (bytes_read == -1)
 		{
 			free(test);
@@ -30,18 +27,16 @@ int run_prompt(void)
 		is_whitespace = 1;
 		for (i = 0; i < bytes_read; i++)
 		{
-            if (test[i] != ' ' && test[i] != '\n' && test[i] != '\t')
+			if (test[i] != ' ' && test[i] != '\n' && test[i] != '\t')
 			{
-                is_whitespace = 0;
-                break;
+				is_whitespace = 0;
+				break;
 			}
 		}
-
 		if (is_whitespace)
-            continue;
+			continue;
 		if (test[bytes_read - 1] == '\n')
 			test[bytes_read - 1] = '\0';
-
 		if (bytes_read == EOF)
 		{
 			free(test);
@@ -53,8 +48,6 @@ int run_prompt(void)
 			free(test);
 			exit(2);
 		}
-
-
 		if (strcmp(test, "env") == 0)
 			_printev(environ);
 		else
