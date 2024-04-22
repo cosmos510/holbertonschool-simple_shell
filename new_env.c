@@ -10,6 +10,8 @@
 void new_env(char *executable_path, char *args[])
 {
 	pid_t child = fork();
+	int status;
+
 
 	if (child == -1)
 	{
@@ -21,13 +23,9 @@ void new_env(char *executable_path, char *args[])
 	{
 		execve(executable_path, args, environ);
 		free(args);
-
 	}
 	else
 	{
-		int status;
-
 		wait(&status);
-
 	}
 }

@@ -2,15 +2,12 @@
 char *test;
 /**
  * run_prompt - function that run the main prompt of our shell
+ * @bytes_read: value of bytes numbers
  * Return: 0 if function succeed
  */
 
-
-
-int run_prompt(void)
+int run_prompt(ssize_t bytes_read)
 {
-	size_t bufsize = 1024;
-	ssize_t bytes_read;
 	int is_whitespace = 1;
 	int i = 0;
 
@@ -18,12 +15,8 @@ int run_prompt(void)
 	while (1)
 	{
 		printf(":) ");
-		bytes_read = getline(&test, &bufsize, stdin);
-		if (bytes_read == -1)
-		{
-			free(test);
-			exit(1);
-		}
+		bytes_read = _getline();
+
 		is_whitespace = 1;
 		for (i = 0; i < bytes_read; i++)
 		{
@@ -35,13 +28,9 @@ int run_prompt(void)
 		}
 		if (is_whitespace)
 			continue;
+
 		if (test[bytes_read - 1] == '\n')
 			test[bytes_read - 1] = '\0';
-		if (bytes_read == EOF)
-		{
-			free(test);
-			exit(0);
-		}
 
 		if (strcmp(test, "exit") == 0)
 		{
