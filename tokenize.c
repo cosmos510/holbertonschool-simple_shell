@@ -16,33 +16,25 @@ int *tokenize_path(char **args_command)
 
 	if (!path || !(*path))
 		return (NULL);
-	if (args_command[0][0] == '/')
+
+	tokens = malloc(1024);
+	if (tokens == NULL)
 	{
-		if (access(args_command[0], F_OK) == 0)
-			new_env(args_command[0], args_command);
+		exit(0);
 	}
-	else
+	if (path)
 	{
-			tokens = malloc(1024);
-		if (tokens == NULL)
+		tok = strtok(path, ":");
+
+		while (tok != NULL)
 		{
-			exit(0);
+			tokens[i++] = tok;
+			tok = strtok(NULL, ":");
 		}
-		if (path)
-		{
-			tok = strtok(path, ":");
-
-			while (tok != NULL)
-			{
-				tokens[i++] = tok;
-				tok = strtok(NULL, ":");
-			}
-			tokens[i] = NULL;
-		}
-
-
-			execute_command(tokens, args_command);
+		tokens[i] = NULL;
 	}
+
+	execute_command(tokens, args_command);
 
 	free(tokens);
 	free(path);
