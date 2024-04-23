@@ -5,7 +5,6 @@
 int prompt_no_inter()
 {
 	int bytes_read =0;
-	char *cmd = NULL;
 
 	while(1)
 	{
@@ -13,16 +12,26 @@ int prompt_no_inter()
 		if (bytes_read > 0)
 		{
 			if (test[bytes_read - 1] == '\n')
-			test[bytes_read - 1] = '\0';
+				test[bytes_read - 1] = '\0';
 
-			cmd = strtok(test," \t\n");
-
-			while (cmd != NULL)
+			if (strcmp(test, "exit") == 0)
 			{
-				read_line(cmd);
-				cmd =strtok(NULL, " \t\n");
+				free(test);
+				exit(0);
+			}
+			if (strcmp(test, "env") == 0)
+				_printev(environ);
+			else
+			{
+				read_line(test);
+				return(0);
+
 			}
 		}
+
 	}
+
+
+
 	return (0);
 }
