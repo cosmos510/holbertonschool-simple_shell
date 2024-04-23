@@ -24,6 +24,7 @@ int prompt_no_inter()
 			else
 			{
 				read_line(test);
+				return(0);
 
 			}
 		}
