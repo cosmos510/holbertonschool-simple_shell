@@ -9,34 +9,26 @@
 
 void execute_command(char **args, char **args_command)
 {
-	int j = 0, i = 0;
+	int j = 0, i =0;
 	char executable_path[256];
 	int found = 0;
 
-	while(args[i] != NULL)
-	{
-		for (j = 0; args[j] != NULL; j++)
-		{
-			sprintf(executable_path, "%s/%s", args[j], args_command[0]);
-			if (access(executable_path, F_OK) == 0)
-			{
-				new_env(executable_path, args_command);
-				found = 1;
-				return;
-			}
-		}
 
-		i++;
-	}
-	i=0;
-	while (args_command[i] != NULL)
+	for (j = 0; args[j] != NULL; j++)
 	{
+
+		sprintf(executable_path, "%s/%s", args[j], args_command[0]);
+		if (access(executable_path, F_OK) == 0)
+		{
+			new_env(executable_path, args_command);
+			found = 1;
+			return;
+		}
 		if (!found && access(args_command[i], F_OK) == 0)
 		{
 			new_env(args_command[i], args_command);
+			found = 1;
 		}
-		i++;
 	}
-
 
 }
