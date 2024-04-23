@@ -16,7 +16,7 @@ int run_prompt(ssize_t bytes_read)
 	while (1)
 	{
 		printf(":) ");
-		bytes_read = _getline(0);
+		bytes_read = _getline();
 
 		is_whitespace = 1;
 		for (i = 0; i < bytes_read; i++)
