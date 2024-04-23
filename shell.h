@@ -24,5 +24,6 @@ void execute_command(char **args, char **args_command);
 void signal_callback_handler(int x);
 void our_exit(int status);
 ssize_t _getline(void);
+int prompt_no_inter();
 
 #endif

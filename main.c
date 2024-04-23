@@ -8,8 +8,6 @@
  */
 int main(int ac, __attribute__((unused)) char **av)
 {
-	while(1)
-	{
 	if (ac == 1)
 	{
 		if (isatty(STDIN_FILENO))
@@ -18,13 +16,13 @@ int main(int ac, __attribute__((unused)) char **av)
 		}
 		else
 		{
-			_getline();
+			prompt_no_inter();
 		}
-	}
 	}
 	free(test);
 	return (0);
 }
+
 
 /**
  * _getline - function to count numbers
