@@ -12,7 +12,7 @@ int run_prompt(ssize_t bytes_read)
 	int i = 0;
 
 	signal(SIGINT, signal_callback_handler);
-	
+
 	while (1)
 	{
 		printf(":) ");

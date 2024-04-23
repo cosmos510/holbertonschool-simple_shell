@@ -6,9 +6,9 @@
  * @av: list of arguments
  * Return: 0 if program run with success
  */
-int main(int ac, char **av)
+int main(int ac, __attribute__((unused)) char **av)
 {
-	if (ac == 1 && strcmp(av[0], "./hsh") == 0)
+	if (ac == 1)
 	{
 		if (isatty(STDIN_FILENO))
 		{
@@ -18,11 +18,6 @@ int main(int ac, char **av)
 		{
 			prompt_no_inter();
 		}
-	}
-	else
-	{
-		printf("hsh: 1: %s: not found\n", av[1]);
-		exit (0);
 	}
 	free(test);
 	return (0);
@@ -34,7 +29,7 @@ int main(int ac, char **av)
  * of bytes passed to the command line
  * Return: numbers of bytes counted
  */
-ssize_t _getline(int flag)
+ssize_t _getline(void)
 {
 	size_t bufsize = 1024;
 	ssize_t bytes_read;
@@ -51,11 +46,6 @@ ssize_t _getline(int flag)
 	{
 		free(test);
 		exit(0);
-	}
-
-	if (flag == 1)
-	{
-		read_line(test);
 	}
 
 	return (bytes_read);
