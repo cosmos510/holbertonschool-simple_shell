@@ -22,7 +22,7 @@ void execute_command(char **args, char **args_command)
 		{
 			new_env(executable_path, args_command);
 			found = 1;
-			break;
+			return;
 		}
 	}
 	if (!found && access(args_command[0], F_OK) == 0)
