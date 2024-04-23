@@ -8,8 +8,6 @@
  */
 int main(int ac, __attribute__((unused)) char **av)
 {
-	int is_whitespace = 1, i =0;
-	int bytes_read = 0;
 	while(1)
 	{
 	if (ac == 1)
@@ -20,32 +18,7 @@ int main(int ac, __attribute__((unused)) char **av)
 		}
 		else
 		{
-			bytes_read = _getline();
-
-		is_whitespace = 1;
-		for (i = 0; i < bytes_read; i++)
-		{
-			if (test[i] != ' ' && test[i] != '\n' && test[i] != '\t')
-			{
-				is_whitespace = 0;
-				break;
-			}
-		}
-		if (is_whitespace)
-			continue;
-
-		if (test[bytes_read - 1] == '\n')
-			test[bytes_read - 1] = '\0';
-
-		if (strcmp(test, "exit") == 0)
-		{
-			free(test);
-			exit(2);
-		}
-		if (strcmp(test, "env") == 0)
-			_printev(environ);
-		else
-			read_line(test);
+			_getline();
 		}
 	}
 	}
