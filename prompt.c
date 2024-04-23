@@ -12,10 +12,11 @@ int run_prompt(ssize_t bytes_read)
 	int i = 0;
 
 	signal(SIGINT, signal_callback_handler);
+	
 	while (1)
 	{
 		printf(":) ");
-		bytes_read = _getline();
+		bytes_read = _getline(0);
 
 		is_whitespace = 1;
 		for (i = 0; i < bytes_read; i++)
@@ -37,7 +38,7 @@ int run_prompt(ssize_t bytes_read)
 			free(test);
 			exit(2);
 		}
-		if (strcmp(test, "env") == 0)
+		else if (strcmp(test, "env") == 0)
 			_printev(environ);
 		else
 			read_line(test);

@@ -23,6 +23,6 @@ char *_getenv(const char *var);
 void execute_command(char **args, char **args_command);
 void signal_callback_handler(int x);
 void our_exit(int status);
-ssize_t _getline(void);
+ssize_t _getline(int flag);
 
 #endif
