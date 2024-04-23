@@ -12,7 +12,7 @@ void execute_command(char **args, char **args_command)
 	int j = 0;
 	char executable_path[256];
 	int found = 0;
-
+	int i =0;
 
 	for (j = 0; args[j] != NULL; j++)
 	{
@@ -25,9 +25,17 @@ void execute_command(char **args, char **args_command)
 			return;
 		}
 	}
-	if (!found && access(args_command[0], F_OK) == 0)
+
+	while (args[i] != NULL)
 	{
-		new_env(args_command[0], args_command);
-		found = 1;
+		if (!found && access(args_command[0], F_OK) == 0)
+		{
+			new_env(args_command[0], args_command);
+			found = 1;
+		}
+
+	i++;
 	}
+
+
 }
