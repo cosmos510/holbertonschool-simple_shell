@@ -16,7 +16,7 @@ int main(int ac, char **av)
 		}
 		else
 		{
-			_getline(1);
+			prompt_no_inter();
 		}
 	}
 	else
@@ -27,6 +27,7 @@ int main(int ac, char **av)
 	free(test);
 	return (0);
 }
+
 
 /**
  * _getline - function to count numbers

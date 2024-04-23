@@ -36,7 +36,7 @@ int run_prompt(ssize_t bytes_read)
 		if (strcmp(test, "exit") == 0)
 		{
 			free(test);
-			exit(2);
+			exit(0);
 		}
 		else if (strcmp(test, "env") == 0)
 			_printev(environ);
