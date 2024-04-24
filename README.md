@@ -73,11 +73,11 @@ git clone https://github.com/cosmos510/holbertonschool-simple_shell.git
 
 ```./hsh```
 
-- The prompt *" : ) "* is running and waits for your commands  :
+- The prompt *" dem:) "* is running and waits for your commands  :
 
 ```bash 
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
-:) 
+dem:) 
 ```
 <br>
 
@@ -99,7 +99,7 @@ root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
 
 ```bash 
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
-:) ls -lt
+dem:) ls -lt
 total 60
 -rw-r--r-- 1 root root  2307 Apr 22 12:43 README.md
 -rwxr-xr-x 1 root root 15024 Apr 22 12:38 hsh
@@ -121,7 +121,7 @@ drwxr-xr-x 2 root root  4096 Apr 22 09:20 pictures
 ```bash
 -rw-r--r-- 1 root root   619 Apr 21 07:09 shell.h
 -rw-r--r-- 1 root root   567 Apr 21 07:09 tokenize.c
-:) touch shell_in_c_is_fun.c
+dem:) touch shell_in_c_is_fun.c
 ```
 <br>
 
@@ -135,7 +135,7 @@ These two build-Ins commands are supported by our shell :
 
 ```bash
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
-:) env
+dem:) env
 ```
 <br>
 
@@ -145,8 +145,8 @@ root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
 
 ```bash
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
-:) mkdir SIMPLE_SHELL
-:) exit
+dem:) mkdir SIMPLE_SHELL
+dem:) exit
 root@f833c6a99731:~/holbertonschool-simple_shell# 
 ```
 <br>
@@ -165,8 +165,8 @@ Our shell is able to work as both interactive and non-interactive modes.
 
 ```bash
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
-:) ls
-:) README.md SIMPLE_SHELL check_path.c  main.c  new_env.c  prompt.c  read-lines.c  shell.h  shell_in_c_is_fun.c  tokenize.c
+dem:) ls
+dem:) README.md SIMPLE_SHELL check_path.c  main.c  new_env.c  prompt.c  read-lines.c  shell.h  shell_in_c_is_fun.c  tokenize.c
 ```
 <br>
 
@@ -192,7 +192,7 @@ Once the prompt launched, simply use the following command :
 
 ```bash
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
-:) man ./man_1_simple_shell 
+dem:) man ./man_1_simple_shell 
 ```
 
 <br>
