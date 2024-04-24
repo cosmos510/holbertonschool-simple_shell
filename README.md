@@ -1,11 +1,10 @@
 <p align="center">
   <img width="160" height="70" src="https://miro.medium.com/v2/resize:fit:250/format:webp/1*P1FKnYJTJxW87fe71611dg.png">
-  <h1 align="center" style="color : beige">Simple Shell (C language)</h1>
-<p style="background-color : beige"></p>
+  <h1 align="center">Simple Shell (C language)</h1>
 <br>
 
 Welcome to our student project aimed at creating a simplified shell in C language.<br>
-<br> This projects marks the culmination of our first semester at the Holberton School of Thonon-les-Bains *(France)*, and it is our most significant assignment yet :rocket:
+<br> This project marks the culmination of our first semester at the Holberton School of Thonon-les-Bains *(France)*, and it is our most significant assignment yet :rocket:
 <br>
 <br>
 We encourage you to take a few minutes to explore what our program can do. Below, you'll find all the relevant details and features of our shell. Thank you for your interest!
@@ -16,7 +15,7 @@ We encourage you to take a few minutes to explore what our program can do. Below
 
 <br>
 
-<h2 style="color : beige"><em>-- DESCRIPTION --</em></h2>
+<h2><em>-- DESCRIPTION --</em></h2>
 
 <br>
 
@@ -37,7 +36,7 @@ The **PATH** variable contains the root subfolders where our functions should lo
 <br>
 <br>
 
-<h2 style="color : beige"><em>-- REQUIREMENTS AND INSTALLATION --</em></h2>
+<h2><em>-- REQUIREMENTS AND INSTALLATION --</em></h2>
 
 <br>
 
@@ -53,51 +52,15 @@ git clone https://github.com/cosmos510/holbertonschool-simple_shell.git
 
 <br>
 
+<h2><em>-- FLOWCHART --</em></h2>
 
-<h2 style="color : beige"><em>-- FLOWCHART --</em></h2>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 
-<h2 style = "color : beige"><em>-- USAGE --</em></h2>
+![alt text](<./pictures/flowchart.png>)
+
+<br>
+
+<h2><em>-- USAGE --</em></h2>
 <br>
 
  Compile the files using this command in your main terminal: 
@@ -120,7 +83,7 @@ root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
 <br>
 
 - Exit the program using this command : 
-```exit```
+`exit`
 
 <br>
 
@@ -163,12 +126,14 @@ drwxr-xr-x 2 root root  4096 Apr 22 09:20 pictures
 ```
 <br>
 
-<h2 style = "color : beige"><em>-- BUILD-INS --</em></h2>
+<h2><em>-- BUILD-INS --</em></h2>
 
 These two build-Ins commands are supported by our shell : 
 
 - `env` : print out the environment variables of the system.
+
 <br>
+
 ```bash
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
 :) env
@@ -176,7 +141,9 @@ root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
 <br>
 
 - `exit` : exit program successfully.
+
 <br>
+
 ```bash
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
 :) mkdir SIMPLE_SHELL
@@ -185,7 +152,7 @@ root@f833c6a99731:~/holbertonschool-simple_shell#
 ```
 <br>
 
-<h2 style = "color : beige"><em>-- INTERACTIVE AND NON-INTERACTIVE MODES --</em></h2>
+<h2><em>-- INTERACTIVE AND NON-INTERACTIVE MODES --</em></h2>
 
 <br>
 
@@ -194,7 +161,9 @@ Our shell is able to work as both interactive and non-interactive modes.
 *Exemples :*
 
 - ***Interactive*** 
+
 <br>
+
 ```bash
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
 :) ls
@@ -203,7 +172,9 @@ root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
 <br>
 
 - ***Non-Interactive*** 
+
 <br>
+
 ```bash
 root@f833c6a99731:~/holbertonschool-simple_shell# touch foo | ./hsh 
 root@f833c6a99731:~/holbertonschool-simple_shell# 
@@ -214,7 +185,7 @@ The file `foo` has been successfully created in the current folder `holberton-si
 
 <br>
 
-<h2 style = "color : beige"><em>-- MANUAL --</em></h2>
+<h2><em>-- MANUAL --</em></h2>
 <br>
 
 You can find more features and information through the manual of our program.
@@ -226,7 +197,7 @@ root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
 ```
 
 <br>
-<h2 style = "color : beige"><em>-- AUTHORS --</em></h2>
+<h2><em>-- AUTHORS --</em></h2>
 
 
 [Maxime Martin](https://github.com/cosmos510/) <br>
