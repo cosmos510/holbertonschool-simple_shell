@@ -66,17 +66,14 @@ git clone https://github.com/cosmos510/holbertonschool-simple_shell.git
 
  Compile the files using this command in your main terminal: 
 <br>
+
 ```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh```
 
 - Run the program this way : 
-<br>
 
 ```./hsh```
 
 - The prompt *" : ) "* is running and waits for your commands  :
-<br>
-
-<br>
 
 ```bash 
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
@@ -183,7 +180,7 @@ root@f833c6a99731:~/holbertonschool-simple_shell#
 ```
 <br>
 
-The file `foo` has been successfully created in the current folder `holberton-simple_shell` ! 
+The file `foo` has been successfully created in the current folder `holbertonschool-simple_shell` ! 
 
 <br>
 
