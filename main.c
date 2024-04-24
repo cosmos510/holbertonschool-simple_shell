@@ -39,5 +39,6 @@ void signal_callback_handler(int x)
 
 	signal(x, SIG_IGN);
 	free(test);
+	printf("\n");
 	our_exit(0);
 }
