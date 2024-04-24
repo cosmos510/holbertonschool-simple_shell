@@ -8,14 +8,14 @@
 */
 int read_line(char *command)
 {
-	char *token = strtok(command, " ");
+	char *token = strtok(command, " \n\t");
 	char *args_command[256];
 	int i = 0;
 
 	while (token != NULL)
 	{
 		args_command[i++] = token;
-		token = strtok(NULL, " ");
+		token = strtok(NULL, " \n\t");
 	}
 	args_command[i] = NULL;
 
