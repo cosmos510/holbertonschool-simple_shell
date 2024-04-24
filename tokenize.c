@@ -16,10 +16,10 @@ int *tokenize_path(char **args_command)
 	char *path = NULL;
 
 
-	if (_getevn("PATH") == NULL)
+	if (_getenv("PATH") == NULL)
 		new_env(args_command[0], args_command);
 	else
-		path = strdup(_getevn("PATH"));
+		path = strdup(_getenv("PATH"));
 
 
 	tokens = malloc(1024);
@@ -45,4 +45,28 @@ int *tokenize_path(char **args_command)
 	free(path);
 
 	return (0);
+}
+
+/**
+ * _getenv - retrieves the value of an environment variable.
+ * @var: the name of the environment variable to retrieve.
+ * Return: a pointer to the value of the environment variable,
+ * or NULL if not found.
+ */
+
+char *_getenv(const char *var)
+{
+	int i = 0;
+	int var_len = strlen(var);
+	char *value_start = NULL;
+
+	for (i = 0; environ[i]; i++)
+	{
+		if (strncmp(environ[i], var, var_len) == 0)
+		{
+			value_start = &environ[i][var_len + 1];
+			return (value_start);
+		}
+	}
+	return (NULL);
 }

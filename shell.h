@@ -14,16 +14,22 @@
 extern char **environ;
 extern char *test;
 
-int run_prompt(ssize_t bytes_read);
-int read_line(char *command);
-void new_env(char *executable_path, char *args[]);
-void _printev(char **environ);
-int *tokenize_path(char **args_command);
-char *_getevn(const char *var);
-void execute_command(char **args, char **args_command);
+int run_prompt(int mode);
 void signal_callback_handler(int x);
-void our_exit(int status);
+
+/*int prompt_nointer(void);*/
+
 ssize_t _getline(void);
-int prompt_no_inter();
+int read_line(char *command);
+
+int *tokenize_path(char **args_command);
+void execute_command(char **args, char **args_command);
+
+char *_getenv(const char *var);
+void new_env(char *executable_path, char *args[]);
+
+
+void _printev(char **environ);
+void our_exit(int status);
 
 #endif
