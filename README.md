@@ -180,7 +180,7 @@ root@f833c6a99731:~/holbertonschool-simple_shell#
 ```
 <br>
 
-The file `foo` has been successfully created in the current folder `holberton-simple_shell` ! 
+The file `foo` has been successfully created in the current folder `holbertonschool-simple_shell` ! 
 
 <br>
 
