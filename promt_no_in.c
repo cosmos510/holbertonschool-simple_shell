@@ -30,8 +30,5 @@ int prompt_no_inter()
 		}
 
 	}
-
-
-
-	return (0);
+	return(0);
 }
