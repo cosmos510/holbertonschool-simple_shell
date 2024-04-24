@@ -44,6 +44,7 @@ The **PATH** variable contains the root subfolders where our functions should lo
 
 - Clone our repository in the folder of your choice by following the next steps : 
 <br>
+
 ```bash 
 sudo apt-get install git  // (if git is not installed)
 cd /$FolderOfYourChoice$/
@@ -69,6 +70,7 @@ git clone https://github.com/cosmos510/holbertonschool-simple_shell.git
 
 - Run the program this way : 
 <br>
+
 ```./hsh```
 
 - The prompt *" : ) "* is running and waits for your commands  :
