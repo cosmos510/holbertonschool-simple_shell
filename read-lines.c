@@ -39,7 +39,7 @@ ssize_t _getline(void)
 	if (bytes_read == -1)
 	{
 		free(test);
-		exit(1);
+		exit(0);
 	}
 
 	if (bytes_read == EOF)
