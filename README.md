@@ -75,8 +75,6 @@ git clone https://github.com/cosmos510/holbertonschool-simple_shell.git
 
 - The prompt *" : ) "* is running and waits for your commands  :
 
-<br>
-
 ```bash 
 root@f833c6a99731:~/holbertonschool-simple_shell# ./hsh
 :) 
