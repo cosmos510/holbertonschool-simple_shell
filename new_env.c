@@ -29,7 +29,7 @@ void new_env(char *executable_path, char *args[])
 		wait(&status);
 		if (status != 0)
 		{
-			our_exit(2);
+			exit(2);
 		}
 	}
 }
