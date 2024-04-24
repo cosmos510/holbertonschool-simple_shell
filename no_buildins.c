@@ -22,7 +22,6 @@ void execute_command(char **args, char **args_command)
 			{
 				new_env(executable_path, args_command);
 				found = 1;
-				return;
 			}
 		}
 		i++;
