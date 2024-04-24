@@ -66,15 +66,14 @@ git clone https://github.com/cosmos510/holbertonschool-simple_shell.git
 
  Compile the files using this command in your main terminal: 
 <br>
+
 ```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh```
 
 - Run the program this way : 
-<br>
 
 ```./hsh```
 
 - The prompt *" : ) "* is running and waits for your commands  :
-<br>
 
 <br>
 
