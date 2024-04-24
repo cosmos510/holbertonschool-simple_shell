@@ -18,6 +18,7 @@ int *tokenize_path(char **args_command)
 	{
 		new_env(args_command[0], args_command);
 		return (0);
+		
 	}
 	else
 		path = strdup(_getenv("PATH"));
