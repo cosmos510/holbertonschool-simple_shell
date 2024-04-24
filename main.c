@@ -6,9 +6,11 @@
  * @av: list of arguments
  * Return: 0 if program run with success
  */
-int main(int ac, __attribute__((unused)) char **av)
+int main(int ac, char **av)
 {
-	if (ac == 1)
+	signal(SIGINT, signal_callback_handler);
+
+	if (ac == 1 && strcmp(av[0], "./hsh") == 0)
 	{
 		if (isatty(STDIN_FILENO))
 		{
@@ -16,37 +18,26 @@ int main(int ac, __attribute__((unused)) char **av)
 		}
 		else
 		{
-			prompt_no_inter();
+			run_prompt(1);
 		}
 	}
+	else
+		printf("error\n");
+
 	free(test);
 	return (0);
 }
 
-
 /**
- * _getline - function to count numbers
- * of bytes passed to the command line
- * Return: numbers of bytes counted
+ * signal_callback_handler - Function to handle a signal by ignoring it and
+ * then calling our_exit with a specified parameter.
+ * @x: The signal number to be handled
  */
-ssize_t _getline(void)
+
+void signal_callback_handler(int x)
 {
-	size_t bufsize = 1024;
-	ssize_t bytes_read;
 
-	bytes_read = getline(&test, &bufsize, stdin);
-
-	if (bytes_read == -1)
-	{
-		free(test);
-		exit(1);
-	}
-
-	if (bytes_read == EOF)
-	{
-		free(test);
-		exit(0);
-	}
-
-	return (bytes_read);
+	signal(x, SIG_IGN);
+	free(test);
+	our_exit(0);
 }

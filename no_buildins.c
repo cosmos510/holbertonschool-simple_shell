@@ -12,20 +12,32 @@ void execute_command(char **args, char **args_command)
 	int i;
 	char executable_path[256];
 
-	for (i = 0; args[i] != NULL; i++)
+	while (args[i] != NULL)
 	{
 		sprintf(executable_path, "%s/%s", args[i], args_command[0]);
 		if (access(executable_path, F_OK) == 0)
 		{
-			new_env(executable_path, args_command);
-			return;
+			sprintf(executable_path, "%s/%s", args[j], args_command[0]);
+			if (!found && access(executable_path, X_OK) == 0)
+			{
+				new_env(executable_path, args_command);
+				found = 1;
+				return;
+			}
 		}
+
+		i++;
 	}
-	for (i = 0; args_command[i] != NULL; i++)
+	i = 0;
+	while (args_command[i] != NULL)
 	{
-		if (access(args_command[i], F_OK) == 0)
+		if (!found && access(args_command[i], X_OK) == 0)
 		{
 			new_env(args_command[i], args_command);
+			found = 1;
 		}
+		i++;
 	}
+
+
 }

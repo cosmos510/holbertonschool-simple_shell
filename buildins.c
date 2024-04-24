@@ -17,3 +17,14 @@ void _printev(char **environ)
 	for (i = 0; environ[i]; i++)
 		printf("%s\n", environ[i]);
 }
+
+/**
+ * our_exit - Function to release memory allocated for a command string and
+ * then exit the program.
+ * @status: The command string whose memory needs to be released
+ */
+void our_exit(int status)
+{
+
+	exit(status);
+}
