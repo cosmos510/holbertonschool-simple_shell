@@ -29,7 +29,7 @@ void execute_command(char **args, char **args_command)
 		i++;
 	}
 	i=0;
-	while (args[i] != NULL)
+	while (args_command[i] != NULL)
 	{
 		if (!found && access(args_command[i], F_OK) == 0)
 		{
