@@ -22,7 +22,7 @@ void new_env(char *executable_path, char *args[])
 	else if (child == 0)
 	{
 		execve(executable_path, args, environ);
-		free(args);
+		
 	}
 	else
 	{
