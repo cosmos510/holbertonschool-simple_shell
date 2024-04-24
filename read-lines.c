@@ -32,7 +32,7 @@ int read_line(char *command)
 ssize_t _getline(void)
 {
 	size_t bufsize = 1024;
-	ssize_t bytes_read;
+	ssize_t bytes_read = 0;
 
 	bytes_read = getline(&test, &bufsize, stdin);
 
