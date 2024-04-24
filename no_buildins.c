@@ -34,7 +34,6 @@ void execute_command(char **args, char **args_command)
 		if (!found && access(args_command[i], X_OK) == 0)
 		{
 			new_env(args_command[i], args_command);
-			found = 1;
 		}
 		i++;
 	}
