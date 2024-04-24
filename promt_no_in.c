@@ -1,10 +1,13 @@
-
 #include "shell.h"
 
-
-int prompt_no_inter()
+/**
+ * prompt_no_inter - function that run non interactive prompt of our shell
+ * Return: 0 if function succeed
+ */
+int prompt_no_inter(void)
 {
-	int bytes_read =0;
+	int bytes_read = 0;
+
 	bytes_read = _getline();
 
 		if (test[bytes_read - 1] == '\n')
@@ -20,9 +23,7 @@ int prompt_no_inter()
 		else
 		{
 			read_line(test);
-			return(0);
+			return (0);
 		}
-
-
 	return (0);
 }

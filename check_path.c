@@ -13,7 +13,7 @@ void execute_command(char **args, char **args_command)
 	char executable_path[256];
 	int found = 0;
 
-	while(args[i] != NULL)
+	while (args[i] != NULL)
 	{
 		for (j = 0; args[j] != NULL; j++)
 		{
@@ -28,13 +28,13 @@ void execute_command(char **args, char **args_command)
 
 		i++;
 	}
-	i=0;
+	i = 0;
 	while (args_command[i] != NULL)
 	{
 		if (!found && access(args_command[i], X_OK) == 0)
 		{
 			new_env(args_command[i], args_command);
-			found =1 ;
+			found = 1;
 		}
 		i++;
 	}
