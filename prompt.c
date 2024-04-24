@@ -28,7 +28,10 @@ int run_prompt(int mode)
 		else if (strcmp(test, "env") == 0)
 			_printev(environ);
 		else
+		{
 			read_line(test);
+			return (0);
+		}
 	}
 	free(test);
 	return (0);
