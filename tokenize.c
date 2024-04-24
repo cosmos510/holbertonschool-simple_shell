@@ -17,8 +17,9 @@ int *tokenize_path(char **args_command)
 	if (_getenv("PATH") == NULL)
 	{
 		new_env(args_command[0], args_command);
-		return (0);
-		
+		fprintf(stderr, "./hsh: 1: %s: not found\n", args_command[0]);
+		exit(127);
+
 	}
 	else
 		path = strdup(_getenv("PATH"));
