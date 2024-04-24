@@ -17,8 +17,6 @@ extern char *test;
 int run_prompt(int mode);
 void signal_callback_handler(int x);
 
-/*int prompt_nointer(void);*/
-
 ssize_t _getline(void);
 int read_line(char *command);
 
@@ -27,7 +25,6 @@ void execute_command(char **args, char **args_command);
 
 char *_getenv(const char *var);
 void new_env(char *executable_path, char *args[]);
-
 
 void _printev(char **environ);
 void our_exit(int status);

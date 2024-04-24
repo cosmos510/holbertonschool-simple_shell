@@ -25,9 +25,9 @@ void execute_command(char **args, char **args_command)
 				return;
 			}
 		}
-
 		i++;
 	}
+
 	i = 0;
 	while (args_command[i] != NULL)
 	{
@@ -38,6 +38,4 @@ void execute_command(char **args, char **args_command)
 		}
 		i++;
 	}
-
-
 }
