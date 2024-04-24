@@ -30,7 +30,8 @@ int run_prompt(int mode)
 		else
 		{
 			read_line(test);
-			return (0);
+			if (mode != 0)
+				return (0);
 		}
 	}
 	free(test);
