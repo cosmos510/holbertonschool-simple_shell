@@ -6,9 +6,9 @@
  * @av: list of arguments
  * Return: 0 if program run with success
  */
-int main(int ac, __attribute__((unused)) char **av)
+int main(__attribute__((unused))int ac, __attribute__((unused)) char **av)
 {
-	if (ac == 1)
+	while (1)
 	{
 		if (isatty(STDIN_FILENO))
 		{
