@@ -12,10 +12,15 @@ int *tokenize_path(char **args_command)
 	char **tokens = 0;
 	char *tok = 0;
 	int i = 0;
-	char *path = strdup(_getenv("PATH"));
 
-	if (path == NULL)
+	char *path = NULL;
+
+
+	if (_getenv("PATH") == NULL)
 		execve(args_command[0],args_command,environ);
+	else
+		path = strdup(_getenv("PATH"));
+
 
 	tokens = malloc(1024);
 
