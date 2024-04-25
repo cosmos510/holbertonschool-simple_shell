@@ -13,7 +13,6 @@ void execute_cmd(char *executable_path, char *args[])
 
 	if (child == -1)
 	{
-		perror("hsh");
 		free(usercmd);
 		exit(2);
 	}
