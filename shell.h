@@ -12,19 +12,19 @@
 
 
 extern char **environ;
-extern char *test;
+extern char *usercmd;
 
 int run_prompt(int mode);
 void signal_callback_handler(int x);
 
 ssize_t _getline(void);
-int read_line(char *command);
+int cut_line(char *command);
 
 int *tokenize_path(char **args_command);
-void execute_command(char **args, char **args_command);
+void search_cmd(char **input_cmd, char **input_args);
 
 char *_getenv(const char *var);
-void new_env(char *executable_path, char *args[]);
+void execute_cmd(char *executable_path, char *args[]);
 
 void _printev(char **environ);
 void our_exit(int status);

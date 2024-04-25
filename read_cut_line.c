@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
-* read_line - Function to tokenize
+* cut_line - Function to tokenize
 * the input command line
 * @command: argument from run_prompt function
 * Return: Always 0
 */
-int read_line(char *command)
+int cut_line(char *command)
 {
 	char *token = strtok(command, " \n\t");
 	char *args_command[256];
@@ -34,17 +34,17 @@ ssize_t _getline(void)
 	size_t bufsize = 1024;
 	ssize_t bytes_read = 0;
 
-	bytes_read = getline(&test, &bufsize, stdin);
+	bytes_read = getline(&usercmd, &bufsize, stdin);
 
 	if (bytes_read == -1)
 	{
-		free(test);
+		free(usercmd);
 		exit(0);
 	}
 
 	if (bytes_read == EOF)
 	{
-		free(test);
+		free(usercmd);
 		exit(0);
 	}
 

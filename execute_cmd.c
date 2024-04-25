@@ -1,13 +1,12 @@
 #include "shell.h"
-
 /**
- * new_env - function to create a new child process and execute a program
+ * execute_cmd - function to create a new child process and execute a program
  * with specified arguments
  * @executable_path: path to the executable program
  * @args: Array of arguments to be passed to the program
  * Return: void
  */
-void new_env(char *executable_path, char *args[])
+void execute_cmd(char *executable_path, char *args[])
 {
 	pid_t child = fork();
 	int status;
@@ -22,15 +21,9 @@ void new_env(char *executable_path, char *args[])
 	else if (child == 0)
 	{
 		execve(executable_path, args, environ);
-
 	}
 	else
 	{
 		wait(&status);
-		if (status != 0)
-		{
-			free(args);
-			exit(2);
-		}
 	}
 }

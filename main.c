@@ -24,7 +24,7 @@ int main(int ac, char **av)
 	else
 		printf("error\n");
 
-	free(test);
+	free(usercmd);
 	return (0);
 }
 
@@ -38,7 +38,7 @@ void signal_callback_handler(int x)
 {
 
 	signal(x, SIG_IGN);
-	free(test);
+	free(usercmd);
 	printf("\n");
 	our_exit(0);
 }

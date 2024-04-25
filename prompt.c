@@ -1,5 +1,5 @@
 #include "shell.h"
-char *test;
+char *usercmd;
 /**
  * run_prompt - function that run the main prompt of our shell
  * @mode: flag for interactive or no interactive mode
@@ -17,22 +17,22 @@ int run_prompt(int mode)
 
 		bytes_read = _getline();
 
-		if (test[bytes_read - 1] == '\n')
-			test[bytes_read - 1] = '\0';
+		if (usercmd[bytes_read - 1] == '\n')
+			usercmd[bytes_read - 1] = '\0';
 
-		if (strcmp(test, "exit") == 0)
+		if (strcmp(usercmd, "exit") == 0)
 		{
-			free(test);
+			free(usercmd);
 			exit(0);
 		}
-		else if (strcmp(test, "env") == 0)
+		else if (strcmp(usercmd, "env") == 0)
 			_printev(environ);
 		else
 		{
-			read_line(test);
+			cut_line(usercmd);
 		}
 	}
-	free(test);
+	free(usercmd);
 	return (0);
 }
 

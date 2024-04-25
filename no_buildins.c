@@ -1,26 +1,27 @@
 #include "shell.h"
 
 /**
- * execute_command - execute a command from the given arguments.
- * @args: an array of strings representing possible paths.
- * @args_command: an array of strings representing the command
+ * search_cmd - execute a command from the given arguments.
+ * @dir: an array of directories in the path
+ * @input_cmd: an array of strings representing the command
  * and its arguments.
  */
 
-void execute_command(char **args, char **args_command)
+void search_cmd(char **dir, char **input_cmd)
 {
 	int j = 0, i = 0;
 	char executable_path[256];
 	int found = 0;
 
-	while (args[i] != NULL)
+	while (dir[i] != NULL)
 	{
-		for (j = 0; args[j] != NULL; j++)
+		for (j = 0; dir[j] != NULL; j++)
 		{
-			sprintf(executable_path, "%s/%s", args[j], args_command[0]);
+			sprintf(executable_path, "%s/%s", dir[j], input_cmd[0]);
+
 			if (!found && access(executable_path, X_OK) == 0)
 			{
-				new_env(executable_path, args_command);
+				execute_cmd(executable_path, input_cmd);
 				found = 1;
 			}
 		}
@@ -28,11 +29,11 @@ void execute_command(char **args, char **args_command)
 	}
 
 	i = 0;
-	while (args_command[i] != NULL)
+	while (input_cmd[i] != NULL)
 	{
-		if (!found && access(args_command[i], X_OK) == 0)
+		if (!found && access(input_cmd[i], X_OK) == 0)
 		{
-			new_env(args_command[i], args_command);
+			execute_cmd(input_cmd[i], input_cmd);
 		}
 		i++;
 	}

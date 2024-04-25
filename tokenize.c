@@ -16,7 +16,7 @@ int *tokenize_path(char **args_command)
 
 	if (_getenv("PATH") == NULL)
 	{
-		new_env(args_command[0], args_command);
+		execute_cmd(args_command[0], args_command);
 		return (0);
 
 	}
@@ -40,7 +40,7 @@ int *tokenize_path(char **args_command)
 	tokens[i] = NULL;
 
 
-	execute_command(tokens, args_command);
+	search_cmd(tokens, args_command);
 
 	free(tokens);
 	free(path);
