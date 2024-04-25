@@ -37,6 +37,4 @@ void search_cmd(char **dir, char **input_cmd)
 		}
 		i++;
 	}
-	if (!found && access(input_cmd[0], X_OK) != 0)
-		perror("hsh");
 }
