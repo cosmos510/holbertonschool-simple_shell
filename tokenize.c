@@ -16,9 +16,8 @@ int *tokenize_path(char **args_command)
 
 	if (_getenv("PATH") == NULL)
 	{
-		/*execute_cmd(args_command[0], args_command);
-		return (0);*/
-		exit(1);
+		execute_cmd(args_command[0], args_command);
+		return (0);
 	}
 	else
 		path = strdup(_getenv("PATH"));
@@ -57,6 +56,12 @@ char *_getenv(const char *var)
 	int i = 0;
 	int var_len = strlen(var);
 	char *value_start = NULL;
+
+	if (environ == NULL || *environ == NULL)
+		return NULL;
+
+	if (var == NULL || *var == NULL)
+		return NULL;
 
 	for (i = 0; environ[i]; i++)
 	{
