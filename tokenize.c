@@ -16,8 +16,9 @@ int *tokenize_path(char **args_command)
 
 	if (_getenv("PATH") == NULL)
 	{
-		execute_cmd(args_command[0], args_command);
-		return (0);
+		/*execute_cmd(args_command[0], args_command);
+		return (0);*/
+		exit(1);
 	}
 	else
 		path = strdup(_getenv("PATH"));
