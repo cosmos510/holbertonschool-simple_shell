@@ -1,0 +1,88 @@
+.TH HSH "1" "\(co April 25, 2024" "v1"
+.SH NAME
+.B dem:)
+\- Command interpreter (shell)
+.SH SYNOPSIS
+.B ./hsh
+\fb\ \fI[command]\fR [arguments ...]
+.br
+.SH DESCRIPTION 
+.B dem:)
+is a custom made command interpreter that we also call a simple Shell.
+.br
+When executed, the program "tokenizes" the user's command line input, then checks the system's  
+.br
+where executables commands are stored.PATH environment variable to access directories where executable commands are stored, like
+.br
+/bin. The program tokenizes the PATH variable to concatenate each directory with the user's 
+.br
+command. If a match is found, the program executes the command; otherwise, it re-prompts the user.
+.br
+The dem:) shell est allowed to run both interactive and non-interactive modes.
+.SH RETURN VALUE
+.B hsh
+will return zero (0), unless specified by an exit code.
+.B
+.SH USAGE
+.br
+You must compile all the files of this repo to be able to use the program. Use this command: gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh 
+.br
+.SH BUILD-INS
+Only two build-ins commands are implemented in our shell : env and exit.
+.br
+Therefore the program is not allowed to run the "cd" command for example.
+
+.SH EXAMPLE
+Here are a couple examples of how you can use the shell.
+
+ -----------------INTERACTIVE MODE--------------------
+
+.P
+.HP 2
+$ ./hsh
+
+.br
+dem:)
+echo Simple Shell is fun
+.br
+Simple Shell is fun
+.br
+dem:)
+pwd
+.br
+/home/holbertonschool-simple_shell
+.br
+dem:)
+touch shell_v1.c shell_v2.c
+.br
+dem:)
+ls
+.br
+shell_v1.c shell_v2.c
+.br
+
+---------------NON-INTERACTIVE MODE------------------
+
+$ echo "pwd" | ./hsh
+.br
+/home/holbertonschool-simple_shell
+
+$ echo "ls" | ./hsh
+.br
+shell_v1.c shell_v2.c
+.br
+
+=====================================================
+
+.SH SEE ALSO
+.BR sh\fR(1)\f
+
+.SH BUGS
+No known bugs.
+
+.SH AUTHORS
+Maxime Martin, Emmanuel Meynetgauthier and Douglas Dachicourt.
+
+.SH COPYRIGHT
+Copyright © 2024 Maxime Martin, Emmanuel Meynetgauthier and Douglas Dachicourt.
+
