@@ -57,10 +57,7 @@ char *_getenv(const char *var)
 	int var_len = strlen(var);
 	char *value_start = NULL;
 
-	if (environ == NULL || *environ == NULL)
-		return NULL;
-
-	if (var == NULL || *var == '\0')
+	if (environ == NULL || *environ == NULL || var == NULL)
 		return NULL;
 
 	for (i = 0; environ[i]; i++)
