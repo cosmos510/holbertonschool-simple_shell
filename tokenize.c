@@ -60,7 +60,7 @@ char *_getenv(const char *var)
 	if (environ == NULL || *environ == NULL)
 		return NULL;
 
-	if (var == NULL || *var == NULL)
+	if (var == NULL || *var == '\0')
 		return NULL;
 
 	for (i = 0; environ[i]; i++)
