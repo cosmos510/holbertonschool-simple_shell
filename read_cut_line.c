@@ -38,15 +38,16 @@ ssize_t _getline(void)
 
 	if (bytes_read == -1)
 	{
+		perror("hsh");
 		free(usercmd);
 		exit(0);
 	}
 
 	if (bytes_read == EOF)
 	{
+		perror("hsh");
 		free(usercmd);
 		exit(0);
 	}
-
 	return (bytes_read);
 }

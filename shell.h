@@ -10,7 +10,6 @@
 #include <errno.h>
 #include <signal.h>
 
-
 extern char **environ;
 extern char *usercmd;
 

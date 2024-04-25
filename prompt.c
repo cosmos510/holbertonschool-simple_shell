@@ -28,9 +28,7 @@ int run_prompt(int mode)
 		else if (strcmp(usercmd, "env") == 0)
 			_printev(environ);
 		else
-		{
 			cut_line(usercmd);
-		}
 	}
 	free(usercmd);
 	return (0);

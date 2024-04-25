@@ -18,7 +18,6 @@ int *tokenize_path(char **args_command)
 	{
 		execute_cmd(args_command[0], args_command);
 		return (0);
-
 	}
 	else
 		path = strdup(_getenv("PATH"));
@@ -26,9 +25,7 @@ int *tokenize_path(char **args_command)
 	tokens = malloc(1024);
 
 	if (tokens == NULL)
-	{
 		exit(0);
-	}
 
 	tok = strtok(path, ":");
 
@@ -38,7 +35,6 @@ int *tokenize_path(char **args_command)
 		tok = strtok(NULL, ":");
 	}
 	tokens[i] = NULL;
-
 
 	search_cmd(tokens, args_command);
 

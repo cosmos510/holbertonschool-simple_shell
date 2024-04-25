@@ -27,14 +27,16 @@ void search_cmd(char **dir, char **input_cmd)
 		}
 		i++;
 	}
-
 	i = 0;
 	while (input_cmd[i] != NULL)
 	{
 		if (!found && access(input_cmd[i], X_OK) == 0)
 		{
 			execute_cmd(input_cmd[i], input_cmd);
+			found = 1;
 		}
 		i++;
 	}
+	if (!found && access(input_cmd[0], X_OK) != 0)
+		perror("hsh");
 }

@@ -19,12 +19,11 @@ void _printev(char **environ)
 }
 
 /**
- * our_exit - Function to release memory allocated for a command string and
- * then exit the program.
- * @status: The command string whose memory needs to be released
+ * our_exit - Try to make our own exit function
+ *
+ * @status: int status err code
  */
 void our_exit(int status)
 {
-
 	exit(status);
 }

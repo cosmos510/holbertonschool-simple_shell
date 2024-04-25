@@ -13,16 +13,12 @@ int main(int ac, char **av)
 	if (ac == 1 && strcmp(av[0], "./hsh") == 0)
 	{
 		if (isatty(STDIN_FILENO))
-		{
 			run_prompt(0);
-		}
 		else
-		{
 			run_prompt(1);
-		}
 	}
 	else
-		printf("error\n");
+		printf("hsh: 0: cannot open %s: No such file\n", av[1]);
 
 	free(usercmd);
 	return (0);
@@ -36,7 +32,6 @@ int main(int ac, char **av)
 
 void signal_callback_handler(int x)
 {
-
 	signal(x, SIG_IGN);
 	free(usercmd);
 	printf("\n");
